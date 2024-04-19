@@ -9,6 +9,7 @@ from typing import List
 
 from convcore.base_converter import BaseConverter
 from convcore.filetypes import FileType
+from pdf2docx import Converter as pdf2docx_converter
 from PIL import Image as PillowImage
 from PyPDF2 import PdfReader, PdfWriter
 
@@ -147,3 +148,32 @@ class PDFToImageExtractor(BaseConverter):
                 fpath = output_folder / f"page{page_num+1}-fig{count+1}-{img.name}"
                 with open(str(fpath), "wb") as fp:
                     fp.write(img.data)
+
+
+class PDFToDocxConvertor(BaseConverter):
+    """
+    Converts PDF files to docx format using [pdf2docx](https://github.com/ArtifexSoftware/pdf2docx) as recommanded [here](https://stackoverflow.com/a/65932031/16668046)
+    There s also a cli interface as presented in [their online](https://pdf2docx.readthedocs.io/en/latest/quickstart.cli.html)
+    """
+
+    file_reader = None
+    file_writer = None
+    folder_as_output = False
+
+    @classmethod
+    def _get_supported_input_type(cls) -> FileType:
+        return FileType.PDF
+
+    @classmethod
+    def _get_supported_output_type(cls) -> FileType:
+        return FileType.MSWORD
+
+    def _convert(self, input_contents: List[Path], output_file: Path):
+        """
+        - read more [here](https://pypdf2.readthedocs.io/en/3.0.0/user/extract-images.html)
+        """
+        pdf_file = input_contents[0]
+
+        cv = pdf2docx_converter(pdf_file)
+        cv.convert(output_file, start=0, end=None)
+        cv.close()

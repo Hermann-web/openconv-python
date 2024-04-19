@@ -17,13 +17,13 @@ Submodules
    :show-inheritance:
 
 
-.. automodule:: openconv.converters.structured
+.. automodule:: openconv.converters.markup
    :members:
    :undoc-members:
    :show-inheritance:
 
 
-.. automodule:: openconv.converters.textual
+.. automodule:: openconv.converters.structured
    :members:
    :undoc-members:
    :show-inheritance:
