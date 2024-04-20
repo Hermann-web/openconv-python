@@ -29,7 +29,7 @@ priority = "explicit"
 
 [tool.poetry.dependencies]
 python = "^3.8.1"
-openconv-core = {version = "^0.1.6a0", source = "test-pypi"}
+openconv-core = {version = "^0.1.6a1", source = "test-pypi"}
 numpy = "^1.24.0"
 opencv-python = "^4.8.1.78"
 pillow = "^10.3.0"
