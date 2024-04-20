@@ -21,7 +21,7 @@ mistune==0.8.4 ; python_full_version >= "3.8.1" and python_full_version < "4.0.0
 mypy-extensions==1.0.0 ; python_full_version >= "3.8.1" and python_version < "4.0"
 mypy==1.9.0 ; python_full_version >= "3.8.1" and python_version < "4.0"
 numpy==1.24.4 ; python_full_version >= "3.8.1" and python_full_version < "4.0.0"
-openconv-core==0.1.6a0 ; python_full_version >= "3.8.1" and python_version < "4.0"
+openconv-core==0.1.6a1 ; python_full_version >= "3.8.1" and python_version < "4.0"
 opencv-python-headless==4.9.0.80 ; python_full_version >= "3.8.1" and python_full_version < "4.0.0"
 opencv-python==4.9.0.80 ; python_full_version >= "3.8.1" and python_full_version < "4.0.0"
 packaging==24.0 ; python_full_version >= "3.8.1" and python_full_version < "4.0.0"
