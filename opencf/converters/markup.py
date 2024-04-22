@@ -6,9 +6,9 @@ This module provides classes for converting between different markup file format
 
 from typing import List
 
-from convcore.base_converter import BaseConverter
-from convcore.filetypes import FileType
-from convcore.io_handler import StrToTxtWriter, TxtToStrReader
+from opencf_core.base_converter import BaseConverter
+from opencf_core.filetypes import FileType
+from opencf_core.io_handler import StrToTxtWriter, TxtToStrReader
 
 
 class TextToTextConverter(BaseConverter):

@@ -1,7 +1,7 @@
-openconv
-========
+opencf
+======
 
 .. toctree::
    :maxdepth: 4
 
-   openconv
+   opencf

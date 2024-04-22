@@ -7,9 +7,9 @@ This module provides classes for converting between stuctured different file for
 from typing import Dict, List
 
 import pandas as pd
-from convcore.base_converter import BaseConverter
-from convcore.filetypes import FileType
-from convcore.io_handler import (
+from opencf_core.base_converter import BaseConverter
+from opencf_core.filetypes import FileType
+from opencf_core.io_handler import (
     CsvToListReader,
     DictToJsonWriter,
     JsonToDictReader,

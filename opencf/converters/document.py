@@ -7,8 +7,8 @@ This module provides classes for converting between document different file form
 from pathlib import Path
 from typing import List
 
-from convcore.base_converter import BaseConverter
-from convcore.filetypes import FileType
+from opencf_core.base_converter import BaseConverter
+from opencf_core.filetypes import FileType
 from pdf2docx import Converter as pdf2docx_converter
 from PIL import Image as PillowImage
 from PyPDF2 import PdfReader, PdfWriter
@@ -177,3 +177,9 @@ class PDFToDocxConvertor(BaseConverter):
         cv = pdf2docx_converter(pdf_file)
         cv.convert(output_file, start=0, end=None)
         cv.close()
+
+
+class PDFToHTML(BaseConverter):
+    """
+    i could use this [tool](https://linux.die.net/man/1/pdftohtml) to do it
+    """

@@ -6,7 +6,7 @@ This module contains the main application logic.
 
 import argparse
 
-from convcore.converter_app import BaseConverterApp
+from opencf_core.converter_app import BaseConverterApp
 
 from .converters import (
     CSVToXMLConverter,

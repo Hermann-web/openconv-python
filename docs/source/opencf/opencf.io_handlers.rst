@@ -1,35 +1,35 @@
-openconv.io\_handlers package
-=============================
+opencf.io\_handlers package
+===========================
 
 Submodules
 ----------
 
 
-.. automodule:: openconv.io_handlers.img_opencv
+.. automodule:: opencf.io_handlers.img_opencv
    :members:
    :undoc-members:
    :show-inheritance:
 
 
-.. automodule:: openconv.io_handlers.img_pillow
+.. automodule:: opencf.io_handlers.img_pillow
    :members:
    :undoc-members:
    :show-inheritance:
 
 
-.. automodule:: openconv.io_handlers.pdf
+.. automodule:: opencf.io_handlers.pdf
    :members:
    :undoc-members:
    :show-inheritance:
 
 
-.. automodule:: openconv.io_handlers.spreadsheet
+.. automodule:: opencf.io_handlers.spreadsheet
    :members:
    :undoc-members:
    :show-inheritance:
 
 
-.. automodule:: openconv.io_handlers.video
+.. automodule:: opencf.io_handlers.video
    :members:
    :undoc-members:
    :show-inheritance:
@@ -37,7 +37,7 @@ Submodules
 Module contents
 ---------------
 
-.. automodule:: openconv.io_handlers
+.. automodule:: opencf.io_handlers
    :members:
    :undoc-members:
    :show-inheritance:

@@ -8,7 +8,7 @@ and concrete implementations for converting between spreadsheet files and pandas
 from pathlib import Path
 
 import pandas as pd
-from convcore.io_handler import FileReader, FileWriter
+from opencf_core.io_handler import FileReader, FileWriter
 
 
 class SpreadsheetToPandasReader(FileReader):

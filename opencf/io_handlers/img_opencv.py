@@ -8,7 +8,7 @@ from pathlib import Path
 
 import cv2
 import numpy as np
-from convcore.io_handler import FileReader, FileWriter
+from opencf_core.io_handler import FileReader, FileWriter
 
 
 class ImageToOpenCVReader(FileReader):

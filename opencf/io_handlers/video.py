@@ -4,7 +4,7 @@ from typing import List, Union
 import cv2
 import imageio
 import numpy as np
-from convcore.io_handler import FileReader, FileWriter
+from opencf_core.io_handler import FileReader, FileWriter
 from cv2.typing import MatLike
 
 from ..utils.image_to_video import save_video_from_array_images

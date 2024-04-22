@@ -16,7 +16,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent.parent.absolute()))
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'Open Conv Python'
+project = 'OpenCF'
 copyright = '2024, Hermann Agossou'
 author = 'Hermann Agossou'
 release = 'v0.2.4'

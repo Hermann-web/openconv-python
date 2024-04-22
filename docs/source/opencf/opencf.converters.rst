@@ -1,35 +1,35 @@
-openconv.converters package
-===========================
+opencf.converters package
+=========================
 
 Submodules
 ----------
 
 
-.. automodule:: openconv.converters.document
+.. automodule:: opencf.converters.document
    :members:
    :undoc-members:
    :show-inheritance:
 
 
-.. automodule:: openconv.converters.image
+.. automodule:: opencf.converters.image
    :members:
    :undoc-members:
    :show-inheritance:
 
 
-.. automodule:: openconv.converters.markup
+.. automodule:: opencf.converters.markup
    :members:
    :undoc-members:
    :show-inheritance:
 
 
-.. automodule:: openconv.converters.structured
+.. automodule:: opencf.converters.structured
    :members:
    :undoc-members:
    :show-inheritance:
 
 
-.. automodule:: openconv.converters.video
+.. automodule:: opencf.converters.video
    :members:
    :undoc-members:
    :show-inheritance:
@@ -37,7 +37,7 @@ Submodules
 Module contents
 ---------------
 
-.. automodule:: openconv.converters
+.. automodule:: opencf.converters
    :members:
    :undoc-members:
    :show-inheritance:

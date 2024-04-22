@@ -1,5 +1,5 @@
-openconv package
-================
+opencf package
+==============
 
 Subpackages
 -----------
@@ -7,14 +7,14 @@ Subpackages
 .. toctree::
    :maxdepth: 4
 
-   openconv.converters
-   openconv.io_handlers
+   opencf.converters
+   opencf.io_handlers
 
 Submodules
 ----------
 
 
-.. automodule:: openconv.app
+.. automodule:: opencf.app
    :members:
    :undoc-members:
    :show-inheritance:
@@ -22,7 +22,7 @@ Submodules
 Module contents
 ---------------
 
-.. automodule:: openconv
+.. automodule:: opencf
    :members:
    :undoc-members:
    :show-inheritance:

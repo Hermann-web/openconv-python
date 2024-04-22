@@ -1,4 +1,4 @@
-MODULE=./openconv
+MODULE=./opencf
 
 poetry run isort $MODULE
 poetry run black $MODULE

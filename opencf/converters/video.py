@@ -7,8 +7,8 @@ This module provides classes for converting between different video file formats
 from typing import List
 
 import numpy as np
-from convcore.base_converter import BaseConverter
-from convcore.filetypes import FileType
+from opencf_core.base_converter import BaseConverter
+from opencf_core.filetypes import FileType
 from cv2.typing import MatLike
 from PIL import Image as PillowImage
 

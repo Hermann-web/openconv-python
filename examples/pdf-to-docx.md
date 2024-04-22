@@ -5,7 +5,7 @@ With a pdf file followed from [their repo](https://github.com/ArtifexSoftware/pd
 
 Run for exxample
 ```bash
-openconv examples/input/demo-table.pdf -o demo-table.docx
+opencf examples/input/demo-table.pdf -o demo-table.docx
 ```
 
 The command will use `pdf2docx` to save the pdf in the output path

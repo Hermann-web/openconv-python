@@ -1,19 +1,19 @@
 [tool.poetry]
-name = "openconv-python"
+name = "opencf"
 packages = [
-    {include = "openconv"}
+    {include = "opencf"}
 ]
-version = "0.2.5a0"
-description = "A collection of Python scripts for file conversion tasks, built on top of the openconv-core framework."
+version = "0.3.0"
+description = "A collection of Python scripts for file conversion tasks, built on top of the opencf-core framework."
 authors = ["Hermann Agossou <agossouhermann7@gmail.com>"]
 readme = "README.md"
 maintainers = [
     "Hermann Agossou <agossouhermann7@gmail.com>"
 ]
 license = "MIT"
-homepage = "https://hermann-web.github.io/blog/projects/introducing-two-new-packages-for-streamlining-file-conversions-in-python/"
-repository = "https://github.com/Hermann-web/file-converter"
-documentation = "https://github.com/Hermann-web/file-converter/blob/main/openconv-python/docs/index.md"
+homepage = "https://github.com/Hermann-web/opencf"
+repository = "https://github.com/Hermann-web/opencf"
+documentation = "https://opencf.readthedocs.io"
 keywords = ["file conversion", "data processing", "file formats"]
 classifiers = [
     "Development Status :: 4 - Beta",
@@ -22,19 +22,13 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
 ]
 
-[[tool.poetry.source]]
-name = "test-pypi"
-url = "https://test.pypi.org/simple/"
-priority = "explicit"
-
 [tool.poetry.dependencies]
 python = "^3.8.1"
-openconv-core = {version = "^0.1.6a1", source = "test-pypi"}
+opencf-core = "^0.2.0"
 numpy = "^1.24.0"
 opencv-python = "^4.8.1.78"
 pillow = "^10.3.0"
 pypdf2 = "^3.0.1"
-python-magic = "^0.4.27"
 pandas = "^2.0.0"
 imageio = "^2.30.0"
 pdf2docx = "^0.5.8"
@@ -62,4 +56,4 @@ requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]
-openconv = "openconv.app:main"
+opencf = "opencf.app:main"

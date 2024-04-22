@@ -1,53 +1,53 @@
 # Table of Contents
 
-* [openconv](#openconv)
-* [openconv.io\_handlers.img\_pillow](#openconv.io_handlers.img_pillow)
-  * [ImageToPillowReader](#openconv.io_handlers.img_pillow.ImageToPillowReader)
-  * [PillowToImageWriter](#openconv.io_handlers.img_pillow.PillowToImageWriter)
-* [openconv.io\_handlers](#openconv.io_handlers)
-* [openconv.io\_handlers.img\_opencv](#openconv.io_handlers.img_opencv)
-  * [ImageToOpenCVReader](#openconv.io_handlers.img_opencv.ImageToOpenCVReader)
-  * [OpenCVToImageWriter](#openconv.io_handlers.img_opencv.OpenCVToImageWriter)
-* [openconv.io\_handlers.pdf](#openconv.io_handlers.pdf)
-  * [PdfToPyPdfReader](#openconv.io_handlers.pdf.PdfToPyPdfReader)
-  * [PyPdfToPdfWriter](#openconv.io_handlers.pdf.PyPdfToPdfWriter)
-* [openconv.io\_handlers.spreadsheet](#openconv.io_handlers.spreadsheet)
-  * [SpreadsheetToPandasReader](#openconv.io_handlers.spreadsheet.SpreadsheetToPandasReader)
-  * [PandasToSpreadsheetWriter](#openconv.io_handlers.spreadsheet.PandasToSpreadsheetWriter)
-* [openconv.io\_handlers.video](#openconv.io_handlers.video)
-  * [VideoArrayWriter](#openconv.io_handlers.video.VideoArrayWriter)
-* [openconv.app](#openconv.app)
-  * [ConverterApp](#openconv.app.ConverterApp)
-  * [main](#openconv.app.main)
-* [openconv.converters](#openconv.converters)
-  * [TextToTextConverter](#openconv.converters.TextToTextConverter)
-  * [XMLToJSONConverter](#openconv.converters.XMLToJSONConverter)
-  * [TXTToMDConverter](#openconv.converters.TXTToMDConverter)
-  * [JSONToCSVConverter](#openconv.converters.JSONToCSVConverter)
-  * [CSVToXMLConverter](#openconv.converters.CSVToXMLConverter)
-  * [XLSXToCSVConverter](#openconv.converters.XLSXToCSVConverter)
-  * [ImageToPDFConverter](#openconv.converters.ImageToPDFConverter)
-  * [ImageToPDFConverterWithPyPdf2](#openconv.converters.ImageToPDFConverterWithPyPdf2)
-  * [PDFToImageConverter](#openconv.converters.PDFToImageConverter)
-  * [PDFToImageExtractor](#openconv.converters.PDFToImageExtractor)
-  * [ImageToVideoConverterWithPillow](#openconv.converters.ImageToVideoConverterWithPillow)
-  * [ImageToVideoConverterWithOpenCV](#openconv.converters.ImageToVideoConverterWithOpenCV)
-* [openconv.utils.image\_to\_video](#openconv.utils.image_to_video)
+* [opencf](#opencf)
+* [opencf.io\_handlers.img\_pillow](#opencf.io_handlers.img_pillow)
+  * [ImageToPillowReader](#opencf.io_handlers.img_pillow.ImageToPillowReader)
+  * [PillowToImageWriter](#opencf.io_handlers.img_pillow.PillowToImageWriter)
+* [opencf.io\_handlers](#opencf.io_handlers)
+* [opencf.io\_handlers.img\_opencv](#opencf.io_handlers.img_opencv)
+  * [ImageToOpenCVReader](#opencf.io_handlers.img_opencv.ImageToOpenCVReader)
+  * [OpenCVToImageWriter](#opencf.io_handlers.img_opencv.OpenCVToImageWriter)
+* [opencf.io\_handlers.pdf](#opencf.io_handlers.pdf)
+  * [PdfToPyPdfReader](#opencf.io_handlers.pdf.PdfToPyPdfReader)
+  * [PyPdfToPdfWriter](#opencf.io_handlers.pdf.PyPdfToPdfWriter)
+* [opencf.io\_handlers.spreadsheet](#opencf.io_handlers.spreadsheet)
+  * [SpreadsheetToPandasReader](#opencf.io_handlers.spreadsheet.SpreadsheetToPandasReader)
+  * [PandasToSpreadsheetWriter](#opencf.io_handlers.spreadsheet.PandasToSpreadsheetWriter)
+* [opencf.io\_handlers.video](#opencf.io_handlers.video)
+  * [VideoArrayWriter](#opencf.io_handlers.video.VideoArrayWriter)
+* [opencf.app](#opencf.app)
+  * [ConverterApp](#opencf.app.ConverterApp)
+  * [main](#opencf.app.main)
+* [opencf.converters](#opencf.converters)
+  * [TextToTextConverter](#opencf.converters.TextToTextConverter)
+  * [XMLToJSONConverter](#opencf.converters.XMLToJSONConverter)
+  * [TXTToMDConverter](#opencf.converters.TXTToMDConverter)
+  * [JSONToCSVConverter](#opencf.converters.JSONToCSVConverter)
+  * [CSVToXMLConverter](#opencf.converters.CSVToXMLConverter)
+  * [XLSXToCSVConverter](#opencf.converters.XLSXToCSVConverter)
+  * [ImageToPDFConverter](#opencf.converters.ImageToPDFConverter)
+  * [ImageToPDFConverterWithPyPdf2](#opencf.converters.ImageToPDFConverterWithPyPdf2)
+  * [PDFToImageConverter](#opencf.converters.PDFToImageConverter)
+  * [PDFToImageExtractor](#opencf.converters.PDFToImageExtractor)
+  * [ImageToVideoConverterWithPillow](#opencf.converters.ImageToVideoConverterWithPillow)
+  * [ImageToVideoConverterWithOpenCV](#opencf.converters.ImageToVideoConverterWithOpenCV)
+* [opencf.utils.image\_to\_video](#opencf.utils.image_to_video)
 
-<a id="openconv"></a>
+<a id="opencf"></a>
 
-# openconv
+# opencf
 
-<a id="openconv.io_handlers.img_pillow"></a>
+<a id="opencf.io_handlers.img_pillow"></a>
 
-# openconv.io\_handlers.img\_pillow
+# opencf.io\_handlers.img\_pillow
 
 Image File I/O Handlers
 
 This module provides classes for reading and writing image files using the Pillow library. It includes abstract base classes
 and concrete implementations for converting between image files and Pillow Image objects.
 
-<a id="openconv.io_handlers.img_pillow.ImageToPillowReader"></a>
+<a id="opencf.io_handlers.img_pillow.ImageToPillowReader"></a>
 
 ## ImageToPillowReader Objects
 
@@ -57,7 +57,7 @@ class ImageToPillowReader(FileReader)
 
 Reads an image file and returns a Pillow Image object.
 
-<a id="openconv.io_handlers.img_pillow.PillowToImageWriter"></a>
+<a id="opencf.io_handlers.img_pillow.PillowToImageWriter"></a>
 
 ## PillowToImageWriter Objects
 
@@ -67,19 +67,19 @@ class PillowToImageWriter(FileWriter)
 
 Writes a Pillow Image object to an image file.
 
-<a id="openconv.io_handlers"></a>
+<a id="opencf.io_handlers"></a>
 
-# openconv.io\_handlers
+# opencf.io\_handlers
 
-<a id="openconv.io_handlers.img_opencv"></a>
+<a id="opencf.io_handlers.img_opencv"></a>
 
-# openconv.io\_handlers.img\_opencv
+# opencf.io\_handlers.img\_opencv
 
 File: img_opencv.py
 Author: Hermann Agossou
 Description: This module provides classes for reading and writing images using OpenCV.
 
-<a id="openconv.io_handlers.img_opencv.ImageToOpenCVReader"></a>
+<a id="opencf.io_handlers.img_opencv.ImageToOpenCVReader"></a>
 
 ## ImageToOpenCVReader Objects
 
@@ -89,7 +89,7 @@ class ImageToOpenCVReader(FileReader)
 
 Reads an image file and returns an OpenCV image object.
 
-<a id="openconv.io_handlers.img_opencv.OpenCVToImageWriter"></a>
+<a id="opencf.io_handlers.img_opencv.OpenCVToImageWriter"></a>
 
 ## OpenCVToImageWriter Objects
 
@@ -99,16 +99,16 @@ class OpenCVToImageWriter(FileWriter)
 
 Writes an OpenCV image object to an image file.
 
-<a id="openconv.io_handlers.pdf"></a>
+<a id="opencf.io_handlers.pdf"></a>
 
-# openconv.io\_handlers.pdf
+# opencf.io\_handlers.pdf
 
 PDF File I/O Handlers
 
 This module provides classes for reading and writing PDF files using the PyPDF2 library. It includes abstract base classes
 and concrete implementations for converting between PDF files and PyPDF2 PdfReader objects.
 
-<a id="openconv.io_handlers.pdf.PdfToPyPdfReader"></a>
+<a id="opencf.io_handlers.pdf.PdfToPyPdfReader"></a>
 
 ## PdfToPyPdfReader Objects
 
@@ -118,7 +118,7 @@ class PdfToPyPdfReader(FileReader)
 
 Reads a PDF file and returns a [PyPDF2 PdfReader object](https://pypdf2.readthedocs.io/en/3.0.0/modules/PdfReader.html).
 
-<a id="openconv.io_handlers.pdf.PyPdfToPdfWriter"></a>
+<a id="opencf.io_handlers.pdf.PyPdfToPdfWriter"></a>
 
 ## PyPdfToPdfWriter Objects
 
@@ -128,16 +128,16 @@ class PyPdfToPdfWriter(FileWriter)
 
 Writes the provided [PyPDF2 PdfWriter object](https://pypdf2.readthedocs.io/en/3.0.0/modules/PdfWriter.html)
 
-<a id="openconv.io_handlers.spreadsheet"></a>
+<a id="opencf.io_handlers.spreadsheet"></a>
 
-# openconv.io\_handlers.spreadsheet
+# opencf.io\_handlers.spreadsheet
 
 Spreadsheet I/O Handlers
 
 This module provides classes for reading and writing spreadsheet files using the pandas library. It includes abstract base classes
 and concrete implementations for converting between spreadsheet files and pandas DataFrame objects.
 
-<a id="openconv.io_handlers.spreadsheet.SpreadsheetToPandasReader"></a>
+<a id="opencf.io_handlers.spreadsheet.SpreadsheetToPandasReader"></a>
 
 ## SpreadsheetToPandasReader Objects
 
@@ -147,7 +147,7 @@ class SpreadsheetToPandasReader(FileReader)
 
 Reads a spreadsheet file and returns a pandas DataFrame object.
 
-<a id="openconv.io_handlers.spreadsheet.PandasToSpreadsheetWriter"></a>
+<a id="opencf.io_handlers.spreadsheet.PandasToSpreadsheetWriter"></a>
 
 ## PandasToSpreadsheetWriter Objects
 
@@ -157,11 +157,11 @@ class PandasToSpreadsheetWriter(FileWriter)
 
 Writes a pandas DataFrame object to a spreadsheet file.
 
-<a id="openconv.io_handlers.video"></a>
+<a id="opencf.io_handlers.video"></a>
 
-# openconv.io\_handlers.video
+# opencf.io\_handlers.video
 
-<a id="openconv.io_handlers.video.VideoArrayWriter"></a>
+<a id="opencf.io_handlers.video.VideoArrayWriter"></a>
 
 ## VideoArrayWriter Objects
 
@@ -171,15 +171,15 @@ class VideoArrayWriter(FileWriter)
 
 Writes a video to a file using a list of image arrays.
 
-<a id="openconv.app"></a>
+<a id="opencf.app"></a>
 
-# openconv.app
+# opencf.app
 
 Main Module
 
 This module contains the main application logic.
 
-<a id="openconv.app.ConverterApp"></a>
+<a id="opencf.app.ConverterApp"></a>
 
 ## ConverterApp Objects
 
@@ -189,7 +189,7 @@ class ConverterApp(BaseConverterApp)
 
 Application for file conversion.
 
-<a id="openconv.app.main"></a>
+<a id="opencf.app.main"></a>
 
 #### main
 
@@ -199,15 +199,15 @@ def main()
 
 Main function to run the file conversion application.
 
-<a id="openconv.converters"></a>
+<a id="opencf.converters"></a>
 
-# openconv.converters
+# opencf.converters
 
 Conversion Handlers
 
 This module provides classes for converting between different file formats. It includes concrete implementations of conversion classes for various file types.
 
-<a id="openconv.converters.TextToTextConverter"></a>
+<a id="opencf.converters.TextToTextConverter"></a>
 
 ## TextToTextConverter Objects
 
@@ -217,7 +217,7 @@ class TextToTextConverter(BaseConverter)
 
 Converts text files to text format.
 
-<a id="openconv.converters.XMLToJSONConverter"></a>
+<a id="opencf.converters.XMLToJSONConverter"></a>
 
 ## XMLToJSONConverter Objects
 
@@ -227,7 +227,7 @@ class XMLToJSONConverter(BaseConverter)
 
 Converts XML files to JSON format.
 
-<a id="openconv.converters.TXTToMDConverter"></a>
+<a id="opencf.converters.TXTToMDConverter"></a>
 
 ## TXTToMDConverter Objects
 
@@ -237,7 +237,7 @@ class TXTToMDConverter(TextToTextConverter)
 
 Converts text files to Markdown format.
 
-<a id="openconv.converters.JSONToCSVConverter"></a>
+<a id="opencf.converters.JSONToCSVConverter"></a>
 
 ## JSONToCSVConverter Objects
 
@@ -247,7 +247,7 @@ class JSONToCSVConverter(BaseConverter)
 
 Converts JSON files to CSV format.
 
-<a id="openconv.converters.CSVToXMLConverter"></a>
+<a id="opencf.converters.CSVToXMLConverter"></a>
 
 ## CSVToXMLConverter Objects
 
@@ -257,7 +257,7 @@ class CSVToXMLConverter(BaseConverter)
 
 Converts CSV files to XML format.
 
-<a id="openconv.converters.XLSXToCSVConverter"></a>
+<a id="opencf.converters.XLSXToCSVConverter"></a>
 
 ## XLSXToCSVConverter Objects
 
@@ -267,7 +267,7 @@ class XLSXToCSVConverter(BaseConverter)
 
 Converts Excel files to CSV format.
 
-<a id="openconv.converters.ImageToPDFConverter"></a>
+<a id="opencf.converters.ImageToPDFConverter"></a>
 
 ## ImageToPDFConverter Objects
 
@@ -277,7 +277,7 @@ class ImageToPDFConverter(BaseConverter)
 
 Converts image files to PDF format.
 
-<a id="openconv.converters.ImageToPDFConverterWithPyPdf2"></a>
+<a id="opencf.converters.ImageToPDFConverterWithPyPdf2"></a>
 
 ## ImageToPDFConverterWithPyPdf2 Objects
 
@@ -287,7 +287,7 @@ class ImageToPDFConverterWithPyPdf2(BaseConverter)
 
 Converts image files to PDF format using PyPDF2.
 
-<a id="openconv.converters.PDFToImageConverter"></a>
+<a id="opencf.converters.PDFToImageConverter"></a>
 
 ## PDFToImageConverter Objects
 
@@ -297,7 +297,7 @@ class PDFToImageConverter(BaseConverter)
 
 Converts PDF files to image format.
 
-<a id="openconv.converters.PDFToImageExtractor"></a>
+<a id="opencf.converters.PDFToImageExtractor"></a>
 
 ## PDFToImageExtractor Objects
 
@@ -307,7 +307,7 @@ class PDFToImageExtractor(BaseConverter)
 
 Converts PDF files to image format.
 
-<a id="openconv.converters.ImageToVideoConverterWithPillow"></a>
+<a id="opencf.converters.ImageToVideoConverterWithPillow"></a>
 
 ## ImageToVideoConverterWithPillow Objects
 
@@ -317,7 +317,7 @@ class ImageToVideoConverterWithPillow(BaseConverter)
 
 Converts image files to video format.
 
-<a id="openconv.converters.ImageToVideoConverterWithOpenCV"></a>
+<a id="opencf.converters.ImageToVideoConverterWithOpenCV"></a>
 
 ## ImageToVideoConverterWithOpenCV Objects
 
@@ -327,9 +327,9 @@ class ImageToVideoConverterWithOpenCV(BaseConverter)
 
 Converts image files to video format.
 
-<a id="openconv.utils.image_to_video"></a>
+<a id="opencf.utils.image_to_video"></a>
 
-# openconv.utils.image\_to\_video
+# opencf.utils.image\_to\_video
 
 images_to_video.py
 
