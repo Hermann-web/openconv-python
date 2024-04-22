@@ -4,8 +4,8 @@ from typing import List, Union
 import cv2
 import imageio
 import numpy as np
-from opencf_core.io_handler import FileReader, FileWriter
 from cv2.typing import MatLike
+from opencf_core.io_handler import FileReader, FileWriter
 
 from ..utils.image_to_video import save_video_from_array_images
 
@@ -58,9 +58,8 @@ class VideoArrayWriter(FileWriter):
 
         img_array = np.asarray(img_array)
 
-        assert (
-            img_array.ndim == 4
-        ), f"img_array.ndim={img_array.ndim} instead of 4"  # Ensure img_array is 4-dimensional (frames, height, width, channels)
+        # Ensure img_array is 4-dimensional (frames, height, width, channels)
+        assert img_array.ndim == 4, f"img_array.ndim={img_array.ndim} instead of 4"
 
         # Get the number of frames
         nb_frames = img_array.shape[0]
@@ -158,7 +157,9 @@ class FramesToGIFWriterWithImageIO(FileWriter):
                 return False
         return True
 
-        # return isinstance(content, list) and all(isinstance(frame, cv2.mat_wrapper.Mat) for frame in content)
+        # return isinstance(content, list) and all(
+        #     isinstance(frame, cv2.mat_wrapper.Mat) for frame in content
+        # )
 
     def _write_content(self, output_gif: Path, frames: List[MatLike]):
         """
