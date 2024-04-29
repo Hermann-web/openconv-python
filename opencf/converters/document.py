@@ -7,6 +7,7 @@ This module provides classes for converting between document different file form
 from pathlib import Path
 from typing import List
 
+import aspose.words as aw
 from opencf_core.base_converter import BaseConverter
 from opencf_core.filetypes import FileType
 from pdf2docx import Converter as pdf2docx_converter
@@ -177,6 +178,40 @@ class PDFToDocxConvertor(BaseConverter):
         cv = pdf2docx_converter(pdf_file)
         cv.convert(output_file, start=0, end=None)
         cv.close()
+
+
+class PDFToDocxWithAspose(BaseConverter):
+    """
+    Converts PDF files to docx format using Aspose.Words for Python.
+    """
+
+    file_reader = None
+    file_writer = None
+    folder_as_output = False
+
+    @classmethod
+    def _get_supported_input_type(cls) -> FileType:
+        return FileType.PDF
+
+    @classmethod
+    def _get_supported_output_type(cls) -> FileType:
+        return FileType.MSWORD
+
+    def _convert(self, input_contents: List[Path], output_file: Path):
+        # Load the PDF document
+        pdf_path = input_contents[0]
+        pdf_doc = aw.Document(str(pdf_path))
+
+        # Load the document from the disc.
+        # doc = aw.Document()
+
+        # # Use DocumentBuilder to add content to the document
+        # builder = aw.DocumentBuilder(doc)
+        # for paragraph in pdf_doc.get_child_nodes(aw.NodeType.PARAGRAPH, True):
+        #     builder.write(paragraph.get_text())
+
+        # Save the document in DOCX format
+        pdf_doc.save(str(output_file))
 
 
 class PDFToHTML(BaseConverter):

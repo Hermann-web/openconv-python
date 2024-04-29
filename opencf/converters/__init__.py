@@ -8,6 +8,7 @@ from .document import (
     ImageToPDFConverter,
     ImageToPDFConverterWithPyPdf2,
     PDFToDocxConvertor,
+    PDFToDocxWithAspose,
     PDFToImageConverter,
     PDFToImageExtractor,
 )

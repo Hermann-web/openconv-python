@@ -15,6 +15,7 @@ from .converters import (
     ImageToVideoConverterWithPillow,
     JSONToCSVConverter,
     PDFToDocxConvertor,
+    PDFToDocxWithAspose,
     PDFToImageExtractor,
     TXTToMDConverter,
     VideoToGIFConverter,
@@ -40,6 +41,7 @@ class ConverterApp(BaseConverterApp):
         ImageToVideoConverterWithPillow,
         ImageToVideoConverterWithOpenCV,
         VideoToGIFConverter,
+        PDFToDocxWithAspose,
         PDFToDocxConvertor,
     ]
 
