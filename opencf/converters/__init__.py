@@ -7,6 +7,7 @@ This module provides classes for converting between different file formats. It i
 from .document import (
     ImageToPDFConverter,
     ImageToPDFConverterWithPyPdf2,
+    MergePDFs,
     PDFToDocxConvertor,
     PDFToDocxWithAspose,
     PDFToImageConverter,

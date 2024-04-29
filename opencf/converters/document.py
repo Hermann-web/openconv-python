@@ -218,3 +218,30 @@ class PDFToHTML(BaseConverter):
     """
     i could use this [tool](https://linux.die.net/man/1/pdftohtml) to do it
     """
+
+
+class MergePDFs(BaseConverter):
+    """
+    Merges multiple PDF files into a single PDF.
+    """
+
+    file_reader = PdfToPyPdfReader()
+    file_writer = PyPdfToPdfWriter()
+    folder_as_output = False
+
+    @classmethod
+    def _get_supported_input_type(cls) -> FileType:
+        return FileType.PDF
+
+    @classmethod
+    def _get_supported_output_type(cls) -> FileType:
+        return FileType.PDF
+
+    def _convert(self, input_contents: List[PdfReader]):
+        pdf_writer = PdfWriter()
+
+        for pdf_file_reader in input_contents:
+            for page in pdf_file_reader.pages:
+                pdf_writer.add_page(page)
+
+        return pdf_writer
