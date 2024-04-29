@@ -19,6 +19,12 @@ Submodules
    :undoc-members:
    :show-inheritance:
 
+
+.. automodule:: opencf.import_script
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 Module contents
 ---------------
 

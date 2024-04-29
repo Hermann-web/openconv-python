@@ -1,6 +1,18 @@
-MODULE=./opencf
+#!/bin/bash
 
-poetry run isort $MODULE
-poetry run black $MODULE
-# pylint $MODULE
-poetry run flake8 $MODULE
+MODULE_PATH="./opencf/"
+
+echo "-> running isort ..."
+poetry run isort $MODULE_PATH
+
+echo "-> running yapf ..."
+poetry run black $MODULE_PATH
+
+echo "-> running flake8 ..."
+poetry run flake8 $MODULE_PATH
+
+# echo "-> running mypy ..."
+# poetry run mypy $MODULE_PATH
+
+# echo "-> running pylint ..."
+# poetry run pylint $MODULE_PATH
