@@ -13,25 +13,19 @@ from opencf_core.io_handler import StrToTxtWriter, TxtToStrReader
 
 class TextToTextConverter(BaseConverter):
     """
-    Converts text files to text format.
+    A converter class for converting text-based files to text format.
     """
 
     file_reader = TxtToStrReader()
     file_writer = StrToTxtWriter()
 
-
-class TXTToMDConverter(TextToTextConverter):
-    """
-    Converts text files to Markdown format.
-    """
-
     @classmethod
     def _get_supported_input_types(cls) -> FileType:
-        return FileType.TEXT
+        return [FileType.TEXT, FileType.MARKDOWN, FileType.JSON, FileType.XML]
 
     @classmethod
     def _get_supported_output_types(cls) -> FileType:
-        return FileType.MARKDOWN
+        return [FileType.TEXT, FileType.MARKDOWN, FileType.JSON, FileType.XML]
 
     def _convert(self, input_contents: List[str]):
         md_content = "\n".join(input_contents)

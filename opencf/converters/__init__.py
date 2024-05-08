@@ -13,7 +13,7 @@ from .document import (
     PDFToImageConverter,
     PDFToImageExtractor,
 )
-from .markup import TXTToMDConverter
+from .markup import TextToTextConverter
 from .structured import (
     CSVToXMLConverter,
     JSONToCSVConverter,

@@ -17,9 +17,8 @@ The `opencf` package provides a collection of Python scripts for file conversion
 
 This module provides classes for converting between different file formats. It includes [concrete implementations of conversion classes](./opencf/converters.py) for various file types.
 
-- `TextToTextConverter`: Converts text files to text format.
+- `TextToTextConverter`: Marge text based files (txt, md, xml, json, ...).
 - `XMLToJSONConverter`: Converts XML files to JSON format. (Reader: XmlToStrReader, Writer: DictToJsonWriter)
-- `TXTToMDConverter`: Converts text files to Markdown format.
 - `JSONToCSVConverter`: Converts JSON files to CSV format. (Reader: JsonToDictReader, Writer: ListToCsvWriter)
 - `CSVToXMLConverter`: Converts CSV files to XML format. (Reader: CsvToListReader, Writer: StrToXmlWriter)
 - `XLSXToCSVConverter`: Converts Excel files to CSV format. (Reader: SpreadsheetToPandasReader, Writer: ListToCsvWriter)
@@ -29,6 +28,7 @@ This module provides classes for converting between different file formats. It i
 - `PDFToImageExtractor`: Extracts images from PDF files. (Reader: PdfToPyPdfReader)
 - `ImageToVideoConverterWithPillow`: Converts image files to video format using Pillow. (Reader: ImageToPillowReader, Writer: VideoArrayWriter)
 - `ImageToVideoConverterWithOpenCV`: Converts image files to video format using OpenCV. (Reader: ImageToOpenCVReader, Writer: VideoArrayWriter)
+- ...
 
 ## Getting Started
 
