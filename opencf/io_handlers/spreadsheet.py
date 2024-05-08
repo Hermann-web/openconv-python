@@ -16,7 +16,7 @@ class SpreadsheetToPandasReader(FileReader):
     Reads a spreadsheet file and returns a pandas DataFrame object.
     """
 
-    input_format = pd.DataFrame
+    # input_format = pd.DataFrame
 
     def _check_input_format(self, content: pd.DataFrame) -> bool:
         """
@@ -48,7 +48,7 @@ class PandasToSpreadsheetWriter(FileWriter):
     Writes a pandas DataFrame object to a spreadsheet file.
     """
 
-    output_format = pd.DataFrame
+    # output_format = pd.DataFrame
 
     def _check_output_format(self, content: pd.DataFrame) -> bool:
         """

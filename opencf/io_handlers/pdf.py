@@ -16,7 +16,7 @@ class PdfToPyPdfReader(FileReader):
     Reads a PDF file and returns a [PyPDF2 PdfReader object](https://pypdf2.readthedocs.io/en/3.0.0/modules/PdfReader.html).
     """
 
-    input_format = PdfReader
+    # input_format = PdfReader
 
     def _check_input_format(self, content: PdfReader) -> bool:
         """
@@ -49,7 +49,7 @@ class PyPdfToPdfWriter(FileWriter):
     Writes the provided [PyPDF2 PdfWriter object](https://pypdf2.readthedocs.io/en/3.0.0/modules/PdfWriter.html)
     """
 
-    output_format = PdfWriter
+    # output_format = PdfWriter
 
     def _check_output_format(self, content: PdfWriter) -> bool:
         """

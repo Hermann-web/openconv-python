@@ -16,7 +16,7 @@ class ImageToPillowReader(FileReader):
     Reads an image file and returns a Pillow Image object.
     """
 
-    input_format = PillowImage.Image
+    # input_format = PillowImage.Image
 
     def _check_input_format(self, content: PillowImage.Image) -> bool:
         """
@@ -48,7 +48,7 @@ class PillowToImageWriter(FileWriter):
     Writes a Pillow Image object to an image file.
     """
 
-    output_format = PillowImage.Image
+    # output_format = PillowImage.Image
 
     def _check_output_format(self, content: PillowImage.Image) -> bool:
         """

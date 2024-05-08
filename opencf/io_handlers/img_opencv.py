@@ -16,7 +16,7 @@ class ImageToOpenCVReader(FileReader):
     Reads an image file and returns an OpenCV image object.
     """
 
-    input_format = np.ndarray
+    # input_format = np.ndarray
 
     def _check_input_format(self, content: np.ndarray) -> bool:
         """
