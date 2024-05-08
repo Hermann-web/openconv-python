@@ -3,7 +3,7 @@ name = "opencf"
 packages = [
     {include = "opencf"}
 ]
-version = "0.3.1"
+version = "0.3.2"
 description = "A collection of Python scripts for file conversion tasks, built on top of the opencf-core framework."
 authors = ["Hermann Agossou <agossouhermann7@gmail.com>"]
 readme = "README.md"
