@@ -37,6 +37,7 @@ class XMLToJSONConverter(BaseConverter):
     def _get_supported_output_types(cls) -> FileType:
         return FileType.JSON
 
+    # pylint: disable=W0221
     def _convert(self, input_contents: List[str]):
         json_data = {}
         return json_data
@@ -58,6 +59,7 @@ class JSONToCSVConverter(BaseConverter):
     def _get_supported_output_types(cls) -> FileType:
         return FileType.CSV
 
+    # pylint: disable=W0221
     def _convert(self, input_contents: List[Dict]):
         json_data: dict = input_contents[0]
         columns, rows = ["a", "b"], [["a1", "b1"], ["a2", "b2"]]
@@ -81,6 +83,7 @@ class CSVToXMLConverter(BaseConverter):
     def _get_supported_output_types(cls) -> FileType:
         return FileType.XML
 
+    # pylint: disable=W0221
     def _convert(self, input_contents):
         columns, rows = ["a", "b"], [["a1", "b1"], ["a2", "b2"]]
         xml_text = ""
@@ -103,6 +106,7 @@ class XLSXToCSVConverter(BaseConverter):
     def _get_supported_output_types(cls) -> FileType:
         return FileType.CSV
 
+    # pylint: disable=W0221
     def _convert(self, input_contents: List[pd.DataFrame]):
         # Assuming input_content is a pandas DataFrame representing the Excel data
         # You may need to adjust this according to your specific use case

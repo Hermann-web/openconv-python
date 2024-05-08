@@ -27,6 +27,7 @@ class TextToTextConverter(BaseConverter):
     def _get_supported_output_types(cls) -> FileType:
         return [FileType.TEXT, FileType.MARKDOWN, FileType.JSON, FileType.XML]
 
+    # pylint: disable=W0221
     def _convert(self, input_contents: List[str]):
         md_content = "\n".join(input_contents)
         return md_content

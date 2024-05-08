@@ -47,6 +47,7 @@ isort = "^5.13.2"
 pydeps = "^1.10.0"
 flake8 = "^7.0.0"
 toml = "^0.10.2"
+pylint = "^3.1.0"
 
 [tool.poetry.group.buildthedocs.dependencies]
 sphinx = "^7.0.0"

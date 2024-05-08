@@ -48,7 +48,7 @@ class VideoArrayWriter(FileWriter):
         Returns:
             bool: True if the video is successfully written, False otherwise.
         """
-        if not len(output_content):
+        if len(output_content) == 0:
             print("No valid images found.")
             return False
 
@@ -161,7 +161,7 @@ class FramesToGIFWriterWithImageIO(FileWriter):
         #     isinstance(frame, cv2.mat_wrapper.Mat) for frame in content
         # )
 
-    def _write_content(self, output_gif: Path, frames: List[MatLike]):
+    def _write_content(self, output_path: Path, frames: List[MatLike]):
         """
         Writes the provided list of frames to the given output GIF file.
 
@@ -170,7 +170,7 @@ class FramesToGIFWriterWithImageIO(FileWriter):
             frames (List[MatLike]): The list of frames to be written to the GIF file.
         """
         try:
-            imageio.mimsave(str(output_gif), frames)
-            print(f"Frames successfully written to GIF: {output_gif}")
+            imageio.mimsave(str(output_path), frames)
+            print(f"Frames successfully written to GIF: {output_path}")
         except Exception as e:
             print(f"Error converting frames to GIF: {e}")

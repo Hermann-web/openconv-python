@@ -37,6 +37,7 @@ class ImageToVideoConverterWithPillow(BaseConverter):
     def _get_supported_output_types(cls) -> FileType:
         return FileType.VIDEO
 
+    # pylint: disable=W0221
     def _convert(self, input_contents: List[PillowImage.Image]):
         """
         Converts a list of image files to a video file.
@@ -70,6 +71,7 @@ class ImageToVideoConverterWithOpenCV(BaseConverter):
     def _get_supported_output_types(cls) -> FileType:
         return FileType.VIDEO
 
+    # pylint: disable=W0221
     def _convert(self, input_contents: List[np.ndarray]):
         """
         Converts a list of image files to a video file.
@@ -100,6 +102,7 @@ class VideoToGIFConverter(BaseConverter):
     def _get_supported_output_types(cls) -> FileType:
         return FileType.GIF
 
+    # pylint: disable=W0221
     def _convert(self, input_contents: List[List[MatLike]]):
         """
         Converts a list of video frames to a GIF.

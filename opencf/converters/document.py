@@ -34,6 +34,7 @@ class ImageToPDFConverter(BaseConverter):
     def _get_supported_output_types(cls) -> FileType:
         return FileType.PDF
 
+    # pylint: disable=W0221
     def _convert(self, input_contents: List[PillowImage.Image], output_file: Path):
         images = input_contents
 
@@ -60,6 +61,7 @@ class ImageToPDFConverterWithPyPdf2(BaseConverter):
     def _get_supported_output_types(cls) -> FileType:
         return FileType.PDF
 
+    # pylint: disable=W0221
     def _convert(self, input_contents: List[PillowImage.Image]):
         # Create a new PDF document
         pdf_writer = PdfWriter()
@@ -91,6 +93,7 @@ class ImageToPDFConverterWithPyPdf2(BaseConverter):
 #     def _get_supported_output_types(cls) -> FileType:
 #         return FileType.PDF
 
+#     # pylint: disable=W0221
 #     def _convert(self, input_contents: List[Path], outputfile: Path):
 #         filepaths = input_contents
 #         # Convert images to PDF using img2pdf
@@ -116,6 +119,7 @@ class PDFToImageConverter(BaseConverter):
     def _get_supported_output_types(cls) -> FileType:
         return FileType.IMAGE
 
+    # pylint: disable=W0221
     def _convert(self, input_contents: List[PdfReader], output_folder: Path):
         # Assuming you want to convert each page to an image
         pass
@@ -138,6 +142,7 @@ class PDFToImageExtractor(BaseConverter):
     def _get_supported_output_types(cls) -> FileType:
         return FileType.IMAGE
 
+    # pylint: disable=W0221
     def _convert(self, input_contents: List[PdfReader], output_folder: Path):
         """
         - read more [here](https://pypdf2.readthedocs.io/en/3.0.0/user/extract-images.html)
@@ -169,6 +174,7 @@ class PDFToDocxConvertor(BaseConverter):
     def _get_supported_output_types(cls) -> FileType:
         return FileType.MSWORD
 
+    # pylint: disable=W0221
     def _convert(self, input_contents: List[Path], output_file: Path):
         """
         - read more [here](https://pypdf2.readthedocs.io/en/3.0.0/user/extract-images.html)
@@ -197,6 +203,7 @@ class PDFToDocxWithAspose(BaseConverter):
     def _get_supported_output_types(cls) -> FileType:
         return FileType.MSWORD
 
+    # pylint: disable=W0221
     def _convert(self, input_contents: List[Path], output_file: Path):
         # Load the PDF document
         pdf_path = input_contents[0]
@@ -237,6 +244,7 @@ class MergePDFs(BaseConverter):
     def _get_supported_output_types(cls) -> FileType:
         return FileType.PDF
 
+    # pylint: disable=W0221
     def _convert(self, input_contents: List[PdfReader]):
         pdf_writer = PdfWriter()
 
