@@ -30,11 +30,11 @@ class ImageToVideoConverterWithPillow(BaseConverter):
     file_writer = VideoArrayWriter()
 
     @classmethod
-    def _get_supported_input_type(cls) -> FileType:
+    def _get_supported_input_types(cls) -> FileType:
         return FileType.IMAGE
 
     @classmethod
-    def _get_supported_output_type(cls) -> FileType:
+    def _get_supported_output_types(cls) -> FileType:
         return FileType.VIDEO
 
     def _convert(self, input_contents: List[PillowImage.Image]):
@@ -63,11 +63,11 @@ class ImageToVideoConverterWithOpenCV(BaseConverter):
     file_writer = VideoArrayWriter()
 
     @classmethod
-    def _get_supported_input_type(cls) -> FileType:
+    def _get_supported_input_types(cls) -> FileType:
         return FileType.IMAGE
 
     @classmethod
-    def _get_supported_output_type(cls) -> FileType:
+    def _get_supported_output_types(cls) -> FileType:
         return FileType.VIDEO
 
     def _convert(self, input_contents: List[np.ndarray]):
@@ -93,11 +93,11 @@ class VideoToGIFConverter(BaseConverter):
     file_writer = FramesToGIFWriterWithImageIO()
 
     @classmethod
-    def _get_supported_input_type(cls) -> FileType:
+    def _get_supported_input_types(cls) -> FileType:
         return FileType.VIDEO
 
     @classmethod
-    def _get_supported_output_type(cls) -> FileType:
+    def _get_supported_output_types(cls) -> FileType:
         return FileType.GIF
 
     def _convert(self, input_contents: List[List[MatLike]]):

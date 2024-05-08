@@ -30,11 +30,11 @@ class XMLToJSONConverter(BaseConverter):
     file_writer = DictToJsonWriter()
 
     @classmethod
-    def _get_supported_input_type(cls) -> FileType:
+    def _get_supported_input_types(cls) -> FileType:
         return FileType.XML
 
     @classmethod
-    def _get_supported_output_type(cls) -> FileType:
+    def _get_supported_output_types(cls) -> FileType:
         return FileType.JSON
 
     def _convert(self, input_contents: List[str]):
@@ -51,11 +51,11 @@ class JSONToCSVConverter(BaseConverter):
     file_writer = ListToCsvWriter()
 
     @classmethod
-    def _get_supported_input_type(cls) -> FileType:
+    def _get_supported_input_types(cls) -> FileType:
         return FileType.JSON
 
     @classmethod
-    def _get_supported_output_type(cls) -> FileType:
+    def _get_supported_output_types(cls) -> FileType:
         return FileType.CSV
 
     def _convert(self, input_contents: List[Dict]):
@@ -74,11 +74,11 @@ class CSVToXMLConverter(BaseConverter):
     file_writer = StrToXmlWriter()
 
     @classmethod
-    def _get_supported_input_type(cls) -> FileType:
+    def _get_supported_input_types(cls) -> FileType:
         return FileType.CSV
 
     @classmethod
-    def _get_supported_output_type(cls) -> FileType:
+    def _get_supported_output_types(cls) -> FileType:
         return FileType.XML
 
     def _convert(self, input_contents):
@@ -96,11 +96,11 @@ class XLSXToCSVConverter(BaseConverter):
     file_writer = ListToCsvWriter()
 
     @classmethod
-    def _get_supported_input_type(cls) -> FileType:
+    def _get_supported_input_types(cls) -> FileType:
         return FileType.EXCEL
 
     @classmethod
-    def _get_supported_output_type(cls) -> FileType:
+    def _get_supported_output_types(cls) -> FileType:
         return FileType.CSV
 
     def _convert(self, input_contents: List[pd.DataFrame]):

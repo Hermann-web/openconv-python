@@ -27,11 +27,11 @@ class ImageToPDFConverter(BaseConverter):
     folder_as_output = False
 
     @classmethod
-    def _get_supported_input_type(cls) -> FileType:
+    def _get_supported_input_types(cls) -> FileType:
         return FileType.IMAGE
 
     @classmethod
-    def _get_supported_output_type(cls) -> FileType:
+    def _get_supported_output_types(cls) -> FileType:
         return FileType.PDF
 
     def _convert(self, input_contents: List[PillowImage.Image], output_file: Path):
@@ -53,11 +53,11 @@ class ImageToPDFConverterWithPyPdf2(BaseConverter):
     file_writer = PyPdfToPdfWriter()
 
     @classmethod
-    def _get_supported_input_type(cls) -> FileType:
+    def _get_supported_input_types(cls) -> FileType:
         return FileType.IMAGE
 
     @classmethod
-    def _get_supported_output_type(cls) -> FileType:
+    def _get_supported_output_types(cls) -> FileType:
         return FileType.PDF
 
     def _convert(self, input_contents: List[PillowImage.Image]):
@@ -84,11 +84,11 @@ class ImageToPDFConverterWithPyPdf2(BaseConverter):
 #     file_writer = None
 
 #     @classmethod
-#     def _get_supported_input_type(cls) -> FileType:
+#     def _get_supported_input_types(cls) -> FileType:
 #         return FileType.IMAGE
 
 #     @classmethod
-#     def _get_supported_output_type(cls) -> FileType:
+#     def _get_supported_output_types(cls) -> FileType:
 #         return FileType.PDF
 
 #     def _convert(self, input_contents: List[Path], outputfile: Path):
@@ -109,11 +109,11 @@ class PDFToImageConverter(BaseConverter):
     folder_as_output = True
 
     @classmethod
-    def _get_supported_input_type(cls) -> FileType:
+    def _get_supported_input_types(cls) -> FileType:
         return FileType.PDF
 
     @classmethod
-    def _get_supported_output_type(cls) -> FileType:
+    def _get_supported_output_types(cls) -> FileType:
         return FileType.IMAGE
 
     def _convert(self, input_contents: List[PdfReader], output_folder: Path):
@@ -131,11 +131,11 @@ class PDFToImageExtractor(BaseConverter):
     folder_as_output = True
 
     @classmethod
-    def _get_supported_input_type(cls) -> FileType:
+    def _get_supported_input_types(cls) -> FileType:
         return FileType.PDF
 
     @classmethod
-    def _get_supported_output_type(cls) -> FileType:
+    def _get_supported_output_types(cls) -> FileType:
         return FileType.IMAGE
 
     def _convert(self, input_contents: List[PdfReader], output_folder: Path):
@@ -162,11 +162,11 @@ class PDFToDocxConvertor(BaseConverter):
     folder_as_output = False
 
     @classmethod
-    def _get_supported_input_type(cls) -> FileType:
+    def _get_supported_input_types(cls) -> FileType:
         return FileType.PDF
 
     @classmethod
-    def _get_supported_output_type(cls) -> FileType:
+    def _get_supported_output_types(cls) -> FileType:
         return FileType.MSWORD
 
     def _convert(self, input_contents: List[Path], output_file: Path):
@@ -190,11 +190,11 @@ class PDFToDocxWithAspose(BaseConverter):
     folder_as_output = False
 
     @classmethod
-    def _get_supported_input_type(cls) -> FileType:
+    def _get_supported_input_types(cls) -> FileType:
         return FileType.PDF
 
     @classmethod
-    def _get_supported_output_type(cls) -> FileType:
+    def _get_supported_output_types(cls) -> FileType:
         return FileType.MSWORD
 
     def _convert(self, input_contents: List[Path], output_file: Path):
@@ -230,11 +230,11 @@ class MergePDFs(BaseConverter):
     folder_as_output = False
 
     @classmethod
-    def _get_supported_input_type(cls) -> FileType:
+    def _get_supported_input_types(cls) -> FileType:
         return FileType.PDF
 
     @classmethod
-    def _get_supported_output_type(cls) -> FileType:
+    def _get_supported_output_types(cls) -> FileType:
         return FileType.PDF
 
     def _convert(self, input_contents: List[PdfReader]):

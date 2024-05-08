@@ -26,11 +26,11 @@ class TXTToMDConverter(TextToTextConverter):
     """
 
     @classmethod
-    def _get_supported_input_type(cls) -> FileType:
+    def _get_supported_input_types(cls) -> FileType:
         return FileType.TEXT
 
     @classmethod
-    def _get_supported_output_type(cls) -> FileType:
+    def _get_supported_output_types(cls) -> FileType:
         return FileType.MARKDOWN
 
     def _convert(self, input_contents: List[str]):
