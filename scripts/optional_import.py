@@ -7,7 +7,8 @@ BASE_DIR = Path(__file__).parent.parent
 package_mappings = {
     'aspose-words': 'aspose',
     'opencv-python': 'cv2',
-    'pillow': 'PIL'
+    'pillow': 'PIL',
+    'pypdf2': 'PyPDF2',
 }
 
 # Read pyproject.toml file
