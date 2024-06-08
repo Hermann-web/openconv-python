@@ -8,7 +8,7 @@ from typing import List
 
 import numpy as np
 from cv2.typing import MatLike
-from opencf_core.base_converter import BaseConverter
+from opencf_core.base_converter import WriterBasedConverter
 from opencf_core.filetypes import FileType
 from PIL import Image as PillowImage
 
@@ -21,7 +21,7 @@ from ..io_handlers import (
 )
 
 
-class ImageToVideoConverterWithPillow(BaseConverter):
+class ImageToVideoConverterWithPillow(WriterBasedConverter):
     """
     Converts image files to video format.
     """
@@ -31,14 +31,13 @@ class ImageToVideoConverterWithPillow(BaseConverter):
 
     @classmethod
     def _get_supported_input_types(cls) -> FileType:
-        return FileType.IMAGE
+        return FileType.IMG_RASTER
 
     @classmethod
     def _get_supported_output_types(cls) -> FileType:
         return FileType.VIDEO
 
-    # pylint: disable=W0221
-    def _convert(self, input_contents: List[PillowImage.Image]):
+    def _convert(self, input_contents: List[PillowImage.Image], args: None):
         """
         Converts a list of image files to a video file.
 
@@ -55,7 +54,7 @@ class ImageToVideoConverterWithPillow(BaseConverter):
         return image_arrays
 
 
-class ImageToVideoConverterWithOpenCV(BaseConverter):
+class ImageToVideoConverterWithOpenCV(WriterBasedConverter):
     """
     Converts image files to video format.
     """
@@ -65,14 +64,13 @@ class ImageToVideoConverterWithOpenCV(BaseConverter):
 
     @classmethod
     def _get_supported_input_types(cls) -> FileType:
-        return FileType.IMAGE
+        return FileType.IMG_RASTER
 
     @classmethod
     def _get_supported_output_types(cls) -> FileType:
         return FileType.VIDEO
 
-    # pylint: disable=W0221
-    def _convert(self, input_contents: List[np.ndarray]):
+    def _convert(self, input_contents: List[np.ndarray], args: None):
         """
         Converts a list of image files to a video file.
 
@@ -86,7 +84,7 @@ class ImageToVideoConverterWithOpenCV(BaseConverter):
         return image_arrays
 
 
-class VideoToGIFConverter(BaseConverter):
+class VideoToGIFConverter(WriterBasedConverter):
     """
     Converts a video file to GIF format.
     """
@@ -102,8 +100,7 @@ class VideoToGIFConverter(BaseConverter):
     def _get_supported_output_types(cls) -> FileType:
         return FileType.GIF
 
-    # pylint: disable=W0221
-    def _convert(self, input_contents: List[List[MatLike]]):
+    def _convert(self, input_contents: List[List[MatLike]], args: None):
         """
         Converts a list of video frames to a GIF.
 

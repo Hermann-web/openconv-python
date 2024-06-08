@@ -27,7 +27,7 @@
   * [CSVToXMLConverter](#opencf.converters.CSVToXMLConverter)
   * [XLSXToCSVConverter](#opencf.converters.XLSXToCSVConverter)
   * [ImageToPDFConverter](#opencf.converters.ImageToPDFConverter)
-  * [ImageToPDFConverterWithPyPdf2](#opencf.converters.ImageToPDFConverterWithPyPdf2)
+  * [ImageToPDFConverterWithPyPDF](#opencf.converters.ImageToPDFConverterWithPyPDF)
   * [PDFToImageConverter](#opencf.converters.PDFToImageConverter)
   * [PDFToImageExtractor](#opencf.converters.PDFToImageExtractor)
   * [ImageToVideoConverterWithPillow](#opencf.converters.ImageToVideoConverterWithPillow)
@@ -52,7 +52,7 @@ and concrete implementations for converting between image files and Pillow Image
 ## ImageToPillowReader Objects
 
 ```python
-class ImageToPillowReader(FileReader)
+class ImageToPillowReader(Reader)
 ```
 
 Reads an image file and returns a Pillow Image object.
@@ -62,7 +62,7 @@ Reads an image file and returns a Pillow Image object.
 ## PillowToImageWriter Objects
 
 ```python
-class PillowToImageWriter(FileWriter)
+class PillowToImageWriter(Writer)
 ```
 
 Writes a Pillow Image object to an image file.
@@ -84,7 +84,7 @@ Description: This module provides classes for reading and writing images using O
 ## ImageToOpenCVReader Objects
 
 ```python
-class ImageToOpenCVReader(FileReader)
+class ImageToOpenCVReader(Reader)
 ```
 
 Reads an image file and returns an OpenCV image object.
@@ -94,7 +94,7 @@ Reads an image file and returns an OpenCV image object.
 ## OpenCVToImageWriter Objects
 
 ```python
-class OpenCVToImageWriter(FileWriter)
+class OpenCVToImageWriter(Writer)
 ```
 
 Writes an OpenCV image object to an image file.
@@ -105,28 +105,28 @@ Writes an OpenCV image object to an image file.
 
 PDF File I/O Handlers
 
-This module provides classes for reading and writing PDF files using the PyPDF2 library. It includes abstract base classes
-and concrete implementations for converting between PDF files and PyPDF2 PdfReader objects.
+This module provides classes for reading and writing PDF files using the PyPDF library. It includes abstract base classes
+and concrete implementations for converting between PDF files and PyPDF PdfReader objects.
 
 <a id="opencf.io_handlers.pdf.PdfToPyPdfReader"></a>
 
 ## PdfToPyPdfReader Objects
 
 ```python
-class PdfToPyPdfReader(FileReader)
+class PdfToPyPdfReader(Reader)
 ```
 
-Reads a PDF file and returns a [PyPDF2 PdfReader object](https://pypdf2.readthedocs.io/en/3.0.0/modules/PdfReader.html).
+Reads a PDF file and returns a [PyPDF PdfReader object](https://pypdf.readthedocs.io/en/3.0.0/modules/PdfReader.html).
 
 <a id="opencf.io_handlers.pdf.PyPdfToPdfWriter"></a>
 
 ## PyPdfToPdfWriter Objects
 
 ```python
-class PyPdfToPdfWriter(FileWriter)
+class PyPdfToPdfWriter(Writer)
 ```
 
-Writes the provided [PyPDF2 PdfWriter object](https://pypdf2.readthedocs.io/en/3.0.0/modules/PdfWriter.html)
+Writes the provided [PyPDF PdfWriter object](https://pypdf.readthedocs.io/en/3.0.0/modules/PdfWriter.html)
 
 <a id="opencf.io_handlers.spreadsheet"></a>
 
@@ -142,7 +142,7 @@ and concrete implementations for converting between spreadsheet files and pandas
 ## SpreadsheetToPandasReader Objects
 
 ```python
-class SpreadsheetToPandasReader(FileReader)
+class SpreadsheetToPandasReader(Reader)
 ```
 
 Reads a spreadsheet file and returns a pandas DataFrame object.
@@ -152,7 +152,7 @@ Reads a spreadsheet file and returns a pandas DataFrame object.
 ## PandasToSpreadsheetWriter Objects
 
 ```python
-class PandasToSpreadsheetWriter(FileWriter)
+class PandasToSpreadsheetWriter(Writer)
 ```
 
 Writes a pandas DataFrame object to a spreadsheet file.
@@ -166,7 +166,7 @@ Writes a pandas DataFrame object to a spreadsheet file.
 ## VideoArrayWriter Objects
 
 ```python
-class VideoArrayWriter(FileWriter)
+class VideoArrayWriter(Writer)
 ```
 
 Writes a video to a file using a list of image arrays.
@@ -277,15 +277,15 @@ class ImageToPDFConverter(BaseConverter)
 
 Converts image files to PDF format.
 
-<a id="opencf.converters.ImageToPDFConverterWithPyPdf2"></a>
+<a id="opencf.converters.ImageToPDFConverterWithPyPDF"></a>
 
-## ImageToPDFConverterWithPyPdf2 Objects
+## ImageToPDFConverterWithPyPDF Objects
 
 ```python
-class ImageToPDFConverterWithPyPdf2(BaseConverter)
+class ImageToPDFConverterWithPyPDF(BaseConverter)
 ```
 
-Converts image files to PDF format using PyPDF2.
+Converts image files to PDF format using PyPDF.
 
 <a id="opencf.converters.PDFToImageConverter"></a>
 

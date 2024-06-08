@@ -7,11 +7,11 @@ and concrete implementations for converting between image files and Pillow Image
 
 from pathlib import Path
 
-from opencf_core.io_handler import FileReader, FileWriter
+from opencf_core.io_handler import Reader, Writer
 from PIL import Image as PillowImage
 
 
-class ImageToPillowReader(FileReader):
+class ImageToPillowReader(Reader):
     """
     Reads an image file and returns a Pillow Image object.
     """
@@ -43,7 +43,7 @@ class ImageToPillowReader(FileReader):
         return PillowImage.open(input_path)
 
 
-class PillowToImageWriter(FileWriter):
+class PillowToImageWriter(Writer):
     """
     Writes a Pillow Image object to an image file.
     """

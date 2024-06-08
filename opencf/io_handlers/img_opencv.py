@@ -8,10 +8,10 @@ from pathlib import Path
 
 import cv2
 import numpy as np
-from opencf_core.io_handler import FileReader, FileWriter
+from opencf_core.io_handler import Reader, Writer
 
 
-class ImageToOpenCVReader(FileReader):
+class ImageToOpenCVReader(Reader):
     """
     Reads an image file and returns an OpenCV image object.
     """
@@ -43,7 +43,7 @@ class ImageToOpenCVReader(FileReader):
         return cv2.imread(str(input_path))
 
 
-class OpenCVToImageWriter(FileWriter):
+class OpenCVToImageWriter(Writer):
     """
     Writes an OpenCV image object to an image file.
     """

@@ -6,12 +6,12 @@ This module provides classes for converting between different markup file format
 
 from typing import List
 
-from opencf_core.base_converter import BaseConverter
+from opencf_core.base_converter import WriterBasedConverter
 from opencf_core.filetypes import FileType
 from opencf_core.io_handler import StrToTxtWriter, TxtToStrReader
 
 
-class TextToTextConverter(BaseConverter):
+class TextToTextConverter(WriterBasedConverter):
     """
     A converter class for converting text-based files to text format.
     """
@@ -21,13 +21,12 @@ class TextToTextConverter(BaseConverter):
 
     @classmethod
     def _get_supported_input_types(cls) -> FileType:
-        return [FileType.TEXT, FileType.MARKDOWN, FileType.JSON, FileType.XML]
+        return [FileType.TEXT, FileType.MD, FileType.JSON, FileType.XML]
 
     @classmethod
     def _get_supported_output_types(cls) -> FileType:
-        return [FileType.TEXT, FileType.MARKDOWN, FileType.JSON, FileType.XML]
+        return [FileType.TEXT, FileType.MD, FileType.JSON, FileType.XML]
 
-    # pylint: disable=W0221
-    def _convert(self, input_contents: List[str]):
+    def _convert(self, input_contents: List[str], args: None):
         md_content = "\n".join(input_contents)
         return md_content

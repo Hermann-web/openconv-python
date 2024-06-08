@@ -8,7 +8,7 @@ package_mappings = {
     'aspose-words': 'aspose',
     'opencv-python': 'cv2',
     'pillow': 'PIL',
-    'pypdf2': 'PyPDF2',
+    'pymupdf': 'fitz',
 }
 
 # Read pyproject.toml file

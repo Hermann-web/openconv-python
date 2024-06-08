@@ -1,1 +1,1 @@
-from opencf.converters.document import ImageToPDFConverter
+from opencf.converters.document import PDFToImageConverterwithPymupdf

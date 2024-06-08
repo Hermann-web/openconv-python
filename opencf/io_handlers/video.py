@@ -5,12 +5,12 @@ import cv2
 import imageio
 import numpy as np
 from cv2.typing import MatLike
-from opencf_core.io_handler import FileReader, FileWriter
+from opencf_core.io_handler import Reader, Writer
 
 from ..utils.image_to_video import save_video_from_array_images
 
 
-class VideoArrayWriter(FileWriter):
+class VideoArrayWriter(Writer):
     """
     Writes a video to a file using a list of image arrays.
     """
@@ -77,7 +77,7 @@ class VideoArrayWriter(FileWriter):
         )
 
 
-class VideoToFramesReaderWithOpenCV(FileReader):
+class VideoToFramesReaderWithOpenCV(Reader):
     """
     Reads a video file and returns a list of frames in MatLike format.
     """
@@ -99,7 +99,7 @@ class VideoToFramesReaderWithOpenCV(FileReader):
             return False
         for item in content:
             # Check if each item in the list is MatLike
-            if not isinstance(item, MatLike):
+            if not isinstance(item, (cv2.Mat, np.ndarray)):
                 return False
         return True
 
@@ -114,7 +114,7 @@ class VideoToFramesReaderWithOpenCV(FileReader):
             List[MatLike]: A list containing frames read from the video file.
         """
         cap = cv2.VideoCapture(str(input_path))
-        frames = []
+        frames: List[MatLike] = []
 
         # Check if the video is opened successfully
         if not cap.isOpened():
@@ -134,7 +134,7 @@ class VideoToFramesReaderWithOpenCV(FileReader):
         return frames
 
 
-class FramesToGIFWriterWithImageIO(FileWriter):
+class FramesToGIFWriterWithImageIO(Writer):
     """
     Writes a list of frames to a GIF file using imageio.
     """
@@ -153,7 +153,7 @@ class FramesToGIFWriterWithImageIO(FileWriter):
             return False
         for item in content:
             # Check if each item in the list is MatLike
-            if not isinstance(item, MatLike):
+            if not isinstance(item, (cv2.Mat, np.ndarray)):
                 return False
         return True
 

@@ -4,9 +4,18 @@
 from generalimport import generalimport
 
 generalimport(
-    "aspose", "pdf2docx", "PyPDF2", message="Install with pip install opencf[document]"
+    "aspose",
+    "pdf2docx",
+    "pypdf",
+    "fitz",
+    message="Install with pip install opencf[document]",
 )
 generalimport(
-    "numpy", "cv2", "PIL", "imageio", message="Install with pip install opencf[media]"
+    "numpy",
+    "cv2",
+    "PIL",
+    "imageio",
+    "svgtrace",
+    message="Install with pip install opencf[media]",
 )
-generalimport("pandas", message="Install with pip install opencf[tabular]")
+generalimport("pandas", "openpyxl", message="Install with pip install opencf[tabular]")

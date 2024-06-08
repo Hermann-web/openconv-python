@@ -5,18 +5,18 @@ This module provides classes for converting between different file formats. It i
 """
 
 from .document import (
-    ImageToPDFConverter,
-    ImageToPDFConverterWithPyPdf2,
-    MergePDFs,
-    PDFToDocxConvertor,
+    ImageToPDFConverterWithPillow,
+    ImageToPDFConverterWithPyPdf,
+    MergePDFswithPypdf,
+    PDFToDocxConvertorwithPdf2docx,
     PDFToDocxWithAspose,
-    PDFToImageConverter,
-    PDFToImageExtractor,
+    PDFToImageConverterwithPymupdf,
+    PDFToImageExtractorwithPypdf,
 )
 from .markup import TextToTextConverter
 from .structured import (
+    CSVToXLSXConverter,
     CSVToXMLConverter,
-    JSONToCSVConverter,
     XLSXToCSVConverter,
     XMLToJSONConverter,
 )

@@ -7,17 +7,21 @@ This module contains the main application logic.
 import argparse
 
 from opencf_core.converter_app import BaseConverterApp
+from opencf_core.logging_config import logger_config
+
+from opencf.converters.document import PDFToImageExtractorwithPymupdf
 
 from .converters import (
     CSVToXMLConverter,
-    ImageToPDFConverter,
+    ImageToPDFConverterWithPillow,
+    ImageToPDFConverterWithPyPdf,
     ImageToVideoConverterWithOpenCV,
     ImageToVideoConverterWithPillow,
-    JSONToCSVConverter,
-    MergePDFs,
-    PDFToDocxConvertor,
+    MergePDFswithPypdf,
+    PDFToDocxConvertorwithPdf2docx,
     PDFToDocxWithAspose,
-    PDFToImageExtractor,
+    PDFToImageConverterwithPymupdf,
+    PDFToImageExtractorwithPypdf,
     TextToTextConverter,
     VideoToGIFConverter,
     XLSXToCSVConverter,
@@ -32,23 +36,24 @@ class ConverterApp(BaseConverterApp):
 
     converters = [
         XMLToJSONConverter,
-        JSONToCSVConverter,
         CSVToXMLConverter,
         TextToTextConverter,
         XLSXToCSVConverter,
-        ImageToPDFConverter,
-        # PDFToImageConverter,
-        PDFToImageExtractor,
+        ImageToPDFConverterWithPyPdf,
+        ImageToPDFConverterWithPillow,
+        PDFToImageConverterwithPymupdf,
+        PDFToImageExtractorwithPypdf,
+        PDFToImageExtractorwithPymupdf,
         ImageToVideoConverterWithPillow,
         ImageToVideoConverterWithOpenCV,
         VideoToGIFConverter,
         PDFToDocxWithAspose,
-        PDFToDocxConvertor,
-        MergePDFs,
+        PDFToDocxConvertorwithPdf2docx,
+        MergePDFswithPypdf,
     ]
 
 
-def main():
+def main() -> None:
     """
     Main function to run the file conversion application.
     """
@@ -67,12 +72,24 @@ def main():
     parser.add_argument(
         "-ot", "--output-file-type", type=str, help="Type of the output file (optional)"
     )
+    parser.add_argument(
+        "-l",
+        "--log-level",
+        type=str,
+        default="INFO",
+        choices=["DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"],
+        help="Log level for the application. Default is INFO.",
+    )
+
     args = parser.parse_args()
 
-    input_file_paths = args.files
-    input_file_type = args.input_file_type
-    output_file_path = args.output_file
-    output_file_type = args.output_file_type
+    input_file_paths: str = args.files
+    input_file_type: str = args.input_file_type
+    output_file_path: str = args.output_file
+    output_file_type: str = args.output_file_type
+    log_level: str = args.log_level
+
+    logger_config.set_log_level_str(level=log_level)
 
     app = ConverterApp(
         input_file_paths, input_file_type, output_file_path, output_file_type

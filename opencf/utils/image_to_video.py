@@ -32,10 +32,10 @@ import numpy as np
 
 def save_video_from_array_images(
     img_array: np.ndarray,
-    size: Tuple[int],
+    size: Tuple[int, int],
     save_path: Path,
     fps: int = 15,
-    label: str = None,
+    label: str = "img",
 ):
 
     if img_array is None:
@@ -51,7 +51,7 @@ def save_video_from_array_images(
         img_array.ndim == 4
     )  # Ensure img_array is 4-dimensional (frames, height, width, channels)
 
-    label = "img" if label is None else str(label)
+    label = str(label)
 
     save_path = Path(save_path)
     suffix = save_path.suffix

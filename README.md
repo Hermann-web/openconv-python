@@ -17,17 +17,42 @@ The `opencf` package provides a collection of Python scripts for file conversion
 
 This module provides classes for converting between different file formats. It includes [concrete implementations of conversion classes](./opencf/converters.py) for various file types.
 
-- `TextToTextConverter`: Marge text based files (txt, md, xml, json, ...).
-- `XMLToJSONConverter`: Converts XML files to JSON format. (Reader: XmlToStrReader, Writer: DictToJsonWriter)
-- `JSONToCSVConverter`: Converts JSON files to CSV format. (Reader: JsonToDictReader, Writer: ListToCsvWriter)
-- `CSVToXMLConverter`: Converts CSV files to XML format. (Reader: CsvToListReader, Writer: StrToXmlWriter)
-- `XLSXToCSVConverter`: Converts Excel files to CSV format. (Reader: SpreadsheetToPandasReader, Writer: ListToCsvWriter)
-- `ImageToPDFConverter`: Converts image files to PDF format. (Reader: ImageToPillowReader)
-- `ImageToPDFConverterWithPyPdf2`: Converts image files to PDF format using PyPDF2. (Reader: ImageToPillowReader, Writer: PyPdfToPdfWriter)
-- `PDFToImageConverter`: Converts PDF files to image format. (Reader: PdfToPyPdfReader)
-- `PDFToImageExtractor`: Extracts images from PDF files. (Reader: PdfToPyPdfReader)
+### Text Conversion
+
+- `TextToTextConverter`: Merges text-based files (txt, md, xml, json, ...) into a single text file.
+
+### XML and JSON Conversion
+
+- `XMLToJSONConverter`: Converts XML files to JSON format. (Reader: XmlToTreeReader, Writer: DictToJsonWriter)
+
+### CSV and Excel Conversion
+
+- `CSVToXMLConverter`: Converts CSV files to XML format. (Reader: CsvToDictReader, Writer: TreeToXmlWriter)
+- `XLSXToCSVConverter`: Converts Excel files to CSV format. (Reader: XlsxToDictReader, Writer: DictToCsvWriter)
+- `CSVToXLSXConverter`: Converts CSV files to EXCEL format. (Reader: CsvToDictReader, Writer: DictToXlsxWriter)
+
+### Image Conversion
+
+- `ImageToPDFConverterWithPyPdf`: Converts image files to PDF format using PyPDF. (Reader: ImageToPillowReader, Writer: PyPdfToPdfWriter)
+- `ImageToPDFConverterWithPillow`: Converts img files to pdf format using Pillow. (Reader: ImageToPillowReader, Writer: PillowToPDFWriter)
+
+### PDF Conversion
+
+- `PDFToImageConverterwithPymupdf`: Converts PDF files to image format using PyMuPDF. (Reader: PdfToPymupdfReader, Writer: PymupdfToImageWriter)
+- `PDFToImageExtractorwithPypdf`: Extracts images from PDF files using PyPDF. (Reader: PdfToPyPdfReader, Writer: PypdfToImageExtractorWriter)
+- `PDFToImageExtractorwithPymupdf`: Extracts images from PDF files using PyMuPDF. (Reader: PdfToPymupdfReader, Writer: PymupdfToImageExtractorWriter)
+- `PDFToDocxConvertorwithPdf2docx`: Converts PDF files to docx format using pdf2docx. (Reader: Pdf2DocxReader, Writer: Pdf2DocxWriter)
+- `PDFToDocxWithAspose`: Converts PDF files to docx format using Aspose.Words for Python. (Reader: AsposeReader, Writer: AsposeWriter)
+
+### PDF Manipulation
+
+- `MergePDFswithPypdf`: Merges multiple PDF files into a single PDF. (Reader: PdfToPyPdfReader, Writer: PyPdfToPdfWriter)
+
+## Video Generation
+
 - `ImageToVideoConverterWithPillow`: Converts image files to video format using Pillow. (Reader: ImageToPillowReader, Writer: VideoArrayWriter)
 - `ImageToVideoConverterWithOpenCV`: Converts image files to video format using OpenCV. (Reader: ImageToOpenCVReader, Writer: VideoArrayWriter)
+- `VideoToGIFConverter`: Converts image files to GIF format using OpenCV and ImageIO. (Reader: VideoToFramesReaderWithOpenCV, Writer: FramesToGIFWriterWithImageIO)
 - ...
 
 ## Getting Started
