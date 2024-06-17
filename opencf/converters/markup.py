@@ -20,12 +20,22 @@ class TextToTextConverter(WriterBasedConverter):
     file_writer = StrToTxtWriter()
 
     @classmethod
-    def _get_supported_input_types(cls) -> FileType:
-        return [FileType.TEXT, FileType.MD, FileType.JSON, FileType.XML]
+    def _get_supported_input_types(cls) -> List[FileType]:
+        return [
+            FileType.TEXT,
+            FileType.MD,
+            FileType.JSON,
+            FileType.XML,  # type:ignore # pylint: disable=no-member
+        ]
 
     @classmethod
-    def _get_supported_output_types(cls) -> FileType:
-        return [FileType.TEXT, FileType.MD, FileType.JSON, FileType.XML]
+    def _get_supported_output_types(cls) -> List[FileType]:
+        return [
+            FileType.TEXT,
+            FileType.MD,
+            FileType.JSON,
+            FileType.XML,  # type:ignore # pylint: disable=no-member
+        ]
 
     def _convert(self, input_contents: List[str], args: None):
         md_content = "\n".join(input_contents)

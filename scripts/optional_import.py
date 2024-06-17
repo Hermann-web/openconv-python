@@ -1,5 +1,6 @@
-import toml
 from pathlib import Path
+
+import toml
 
 BASE_DIR = Path(__file__).parent.parent
 

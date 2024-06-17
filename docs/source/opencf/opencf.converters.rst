@@ -11,19 +11,25 @@ Submodules
    :show-inheritance:
 
 
-.. automodule:: opencf.converters.image
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-
 .. automodule:: opencf.converters.markup
    :members:
    :undoc-members:
    :show-inheritance:
 
 
-.. automodule:: opencf.converters.structured
+.. automodule:: opencf.converters.pdf
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+.. automodule:: opencf.converters.raster
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+.. automodule:: opencf.converters.spreadsheet
    :members:
    :undoc-members:
    :show-inheritance:

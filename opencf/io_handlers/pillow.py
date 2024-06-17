@@ -6,9 +6,12 @@ and concrete implementations for converting between image files and Pillow Image
 """
 
 from pathlib import Path
+from typing import List
 
 from opencf_core.io_handler import Reader, Writer
 from PIL import Image as PillowImage
+
+PillowImageReader = PillowImage.Image
 
 
 class ImageToPillowReader(Reader):
@@ -71,3 +74,39 @@ class PillowToImageWriter(Writer):
             output_content (PillowImage.Image): The Pillow Image object to be written to the output file.
         """
         output_content.save(output_path)
+
+
+class PillowToPDFWriter(Writer):
+
+    def _check_output_format(self, content: List[PillowImage.Image]) -> bool:
+        """
+        Validates if the provided content is a PyPDF PdfWriter object.
+
+        Args:
+            content (PdfWriter): The content to be validated.
+
+        Returns:
+            bool: True if the content is a PyPDF PdfWriter object, False otherwise.
+        """
+        return isinstance(content, list) and all(
+            isinstance(ct, PillowImage.Image) for ct in content
+        )
+
+    def _write_content(
+        self, output_path: Path, output_content: List[PillowImage.Image]
+    ):
+        """
+        Writes the provided PillowImage.Image objects to the given output path as a PDF file.
+
+        Args:
+            output_path (Path): The path to the output PDF file.
+            output_content (List[PillowImage.Image]): The PillowImage.Image objects to be written to the output file.
+        """
+        images = output_content
+        output_file = output_path
+
+        # Create a list of all the input images and convert them to RGB
+        images = [img.convert("RGB") for img in images]
+
+        # Save the PDF file
+        images[0].save(output_file, save_all=True, append_images=images[1:])

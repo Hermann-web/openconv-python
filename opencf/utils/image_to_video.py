@@ -58,13 +58,17 @@ def save_video_from_array_images(
 
     # Initialize video writer
     if suffix.lower() == ".avi":
-        fourcc = cv2.VideoWriter_fourcc(*"DIVX")
+        vid_writer_config = "DIVX"
     elif suffix.lower() == ".mp4":
-        fourcc = cv2.VideoWriter_fourcc(*"mp4v")
+        vid_writer_config = "mp4v"
     else:
         ValueError(
             f"bad suffix for the videowriter. found suffix={suffix.lower()} instead of .avi or .mp4"
         )
+
+    # using cv2.VideoWriter.fourcc as VideoWriter_fourcc is not an explicit member of cv2
+    # https://stackoverflow.com/a/77910501/16668046
+    fourcc = cv2.VideoWriter.fourcc(*vid_writer_config)
 
     print("size = ", size)
     out = cv2.VideoWriter(str(save_path), fourcc, fps, size)

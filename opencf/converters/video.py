@@ -6,19 +6,19 @@ This module provides classes for converting between different video file formats
 
 from typing import List
 
-import numpy as np
-from cv2.typing import MatLike
 from opencf_core.base_converter import WriterBasedConverter
 from opencf_core.filetypes import FileType
-from PIL import Image as PillowImage
 
-from ..io_handlers import (
+from ..io_handlers.opencv import (
+    ArrayLike,
     FramesToGIFWriterWithImageIO,
     ImageToOpenCVReader,
-    ImageToPillowReader,
+    MatLike,
     VideoArrayWriter,
     VideoToFramesReaderWithOpenCV,
+    np_asarray,
 )
+from ..io_handlers.pillow import ImageToPillowReader, PillowImageReader
 
 
 class ImageToVideoConverterWithPillow(WriterBasedConverter):
@@ -37,19 +37,21 @@ class ImageToVideoConverterWithPillow(WriterBasedConverter):
     def _get_supported_output_types(cls) -> FileType:
         return FileType.VIDEO
 
-    def _convert(self, input_contents: List[PillowImage.Image], args: None):
+    def _convert(
+        self, input_contents: List[PillowImageReader], args: None
+    ) -> List[ArrayLike]:
         """
         Converts a list of image files to a video file.
 
         Args:
-            input_contents (List[PillowImage.Image]): List of input images.
+            input_contents (List[PillowReader]): List of input images.
             output_file (Path): Output video file path.
         """
         # Convert Pillow images to numpy arrays
-        image_arrays = [np.array(img) for img in input_contents]
+        image_arrays = [np_asarray(img) for img in input_contents]
 
         # Convert list of numpy based opencv images to numpy array
-        image_arrays = np.asarray(input_contents)
+        # image_arrays = np_asarray(input_contents)
 
         return image_arrays
 
@@ -70,18 +72,18 @@ class ImageToVideoConverterWithOpenCV(WriterBasedConverter):
     def _get_supported_output_types(cls) -> FileType:
         return FileType.VIDEO
 
-    def _convert(self, input_contents: List[np.ndarray], args: None):
+    def _convert(self, input_contents: List[MatLike], args: None) -> List[MatLike]:
         """
         Converts a list of image files to a video file.
 
         Args:
-            input_contents (List[np.ndarray]): List of input images.
+            input_contents (List[MatLike]): List of input images.
             output_file (Path): Output video file path.
         """
         # Convert list of numpy based opencv images to numpy array
-        image_arrays = np.asarray(input_contents)
+        # image_arrays = [np_asarray(img) for img in input_contents]
 
-        return image_arrays
+        return input_contents
 
 
 class VideoToGIFConverter(WriterBasedConverter):

@@ -14,8 +14,8 @@
 * [opencf.io\_handlers.spreadsheet](#opencf.io_handlers.spreadsheet)
   * [SpreadsheetToPandasReader](#opencf.io_handlers.spreadsheet.SpreadsheetToPandasReader)
   * [PandasToSpreadsheetWriter](#opencf.io_handlers.spreadsheet.PandasToSpreadsheetWriter)
-* [opencf.io\_handlers.video](#opencf.io_handlers.video)
-  * [VideoArrayWriter](#opencf.io_handlers.video.VideoArrayWriter)
+* [opencf.io\_handlers.opencv](#opencf.io_handlers.opencv)
+  * [VideoArrayWriter](#opencf.io_handlers.opencv.VideoArrayWriter)
 * [opencf.app](#opencf.app)
   * [ConverterApp](#opencf.app.ConverterApp)
   * [main](#opencf.app.main)
@@ -157,11 +157,11 @@ class PandasToSpreadsheetWriter(Writer)
 
 Writes a pandas DataFrame object to a spreadsheet file.
 
-<a id="opencf.io_handlers.video"></a>
+<a id="opencf.io_handlers.opencv"></a>
 
-# opencf.io\_handlers.video
+# opencf.io\_handlers.opencv
 
-<a id="opencf.io_handlers.video.VideoArrayWriter"></a>
+<a id="opencf.io_handlers.opencv.VideoArrayWriter"></a>
 
 ## VideoArrayWriter Objects
 

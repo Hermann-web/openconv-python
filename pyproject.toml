@@ -3,7 +3,7 @@ name = "opencf"
 packages = [
     {include = "opencf"}
 ]
-version = "0.3.2"
+version = "0.3.3a1"
 description = "A collection of Python scripts for file conversion tasks, built on top of the opencf-core framework."
 authors = ["Hermann Agossou <agossouhermann7@gmail.com>"]
 readme = "README.md"
@@ -24,11 +24,11 @@ classifiers = [
 
 [tool.poetry.dependencies]
 python = ">=3.9,<3.12"
-opencf-core = "^0.3.2"
+opencf-core = "^0.3.3"
 generalimport = "==0.5.2"
-numpy = {version = "^1.24.0", optional = true}
+numpy = "^1.24.0"
+pillow = "^10.3.0"
 opencv-python = {version = "^4.8.1.78", optional = true}
-pillow = {version = "^10.3.0", optional = true}
 pypdf = {version = "^4.2.0", optional = true}
 pandas = {version = "^2.0.0", optional = true}
 imageio = {version = "^2.30.0", optional = true}
@@ -40,8 +40,13 @@ pymupdf = {version = "^1.24.5", optional = true}
 
 
 [tool.poetry.extras]
+# document conversion including pdf
 document = ["aspose-words", "pdf2docx", "pypdf", "pymupdf"]
-media = ["numpy", "opencv-python", "pillow", "imageio", "svgtrace"]
+# pdf manipulation including "pdf conversion to/from image"
+pdf = ["pypdf", "pymupdf"]
+# video and image conversion and manipulation
+media = ["opencv-python", "imageio", "svgtrace"]
+# spreadsheet conversion and manipulation
 tabular = ["pandas", "openpyxl"]
 
 [tool.poetry.group.dev.dependencies]
@@ -65,6 +70,16 @@ profile = "black"
 
 [tool.black]
 line-length = 88
+
+[[tool.mypy.overrides]]
+module = [
+    "generalimport",
+    "aspose",
+    "aspose.words",
+    "pdf2docx",
+    "fitz"
+]
+ignore_missing_imports = true
 
 [build-system]
 requires = ["poetry-core"]

@@ -4,17 +4,17 @@ Conversion Handlers
 This module provides classes for converting between different file formats. It includes concrete implementations of conversion classes for various file types.
 """
 
-from .document import (
+from .document import PDFToDocxConvertorwithPdf2docx, PDFToDocxWithAspose
+from .markup import TextToTextConverter
+from .pdf import (
     ImageToPDFConverterWithPillow,
     ImageToPDFConverterWithPyPdf,
     MergePDFswithPypdf,
-    PDFToDocxConvertorwithPdf2docx,
-    PDFToDocxWithAspose,
     PDFToImageConverterwithPymupdf,
+    PDFToImageExtractorwithPymupdf,
     PDFToImageExtractorwithPypdf,
 )
-from .markup import TextToTextConverter
-from .structured import (
+from .spreadsheet import (
     CSVToXLSXConverter,
     CSVToXMLConverter,
     XLSXToCSVConverter,

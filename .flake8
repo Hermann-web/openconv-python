@@ -1,7 +1,9 @@
 # https://flake8.pycqa.org/en/2.5.5/config.html
 
 [flake8]
-ignore = E501
+# using extend-ignore instead of ignore
+# https://stackoverflow.com/a/73569444/16668046
+extend-ignore = E501
 max-line-length = 100
 exclude = */__init__.py
 max-complexity = 10

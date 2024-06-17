@@ -30,7 +30,7 @@ class XMLToJSONConverter(WriterBasedConverter):
 
     @classmethod
     def _get_supported_input_types(cls) -> FileType:
-        return FileType.XML
+        return FileType.XML  # type:ignore # pylint: disable=no-member
 
     @classmethod
     def _get_supported_output_types(cls) -> FileType:
@@ -74,7 +74,7 @@ class CSVToXMLConverter(WriterBasedConverter):
 
     @classmethod
     def _get_supported_output_types(cls) -> FileType:
-        return FileType.XML
+        return FileType.XML  # type:ignore # pylint: disable=no-member
 
     def _convert(self, input_contents: List[Dict[str, Any]], args=None) -> ET.Element:
         """

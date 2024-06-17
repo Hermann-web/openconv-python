@@ -5,11 +5,10 @@ This module contains the main application logic.
 """
 
 import argparse
+from typing import List
 
 from opencf_core.converter_app import BaseConverterApp
 from opencf_core.logging_config import logger_config
-
-from opencf.converters.document import PDFToImageExtractorwithPymupdf
 
 from .converters import (
     CSVToXMLConverter,
@@ -21,6 +20,7 @@ from .converters import (
     PDFToDocxConvertorwithPdf2docx,
     PDFToDocxWithAspose,
     PDFToImageConverterwithPymupdf,
+    PDFToImageExtractorwithPymupdf,
     PDFToImageExtractorwithPypdf,
     TextToTextConverter,
     VideoToGIFConverter,
@@ -83,7 +83,7 @@ def main() -> None:
 
     args = parser.parse_args()
 
-    input_file_paths: str = args.files
+    input_file_paths: List[str] = args.files
     input_file_type: str = args.input_file_type
     output_file_path: str = args.output_file
     output_file_type: str = args.output_file_type
